@@ -18,10 +18,10 @@ WEAPON_RECORDS = {
                     "most_world_deaths": ["CLUMSIEST FOOL", "{:,} deaths by world"],
                     "most_dmg_per_kill": ["GOOD SAMARITAN", "{:0.2f} dmg per frag"],
                     "most_lines_of_chat": ["BIGGEST CHATTERBOX", "{} lines of chat"],
-                    "pewpewpew": ["PEWPEWPEW", "{} rail hits"],
                     "best_td_ratio": ["THAW TACTICIAN", "{:0.2f} T/D ratio"],
                     "most_thaws": ["LIFESAVER", "{} thaws"],
-                    "highest_score": ["TOP SCORE", "{:,} pts"]
+                    "highest_score": ["TOP SCORE", "{:,} pts"],
+                    "pewpewpew": ["PEWPEWPEW", "{} rail hits"]
                   } 
 FILE_PATTERN = re.compile('[\W_]+')
 
@@ -376,7 +376,7 @@ class uberstats(minqlx.Plugin):
   @minqlx.thread
   def handle_game_end(self, data):
     if not data["ABORTED"] and self.best_kpm:
-      self.msg("^5***Ice^1³^5 STATS***")
+      self.msg("^7***Frosty Fox STATS***")
       stats_output = "^1KILL MACHINE: "
       record_response = ""
       for i, player_name in enumerate(self.best_kpm_names):
